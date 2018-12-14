@@ -1,0 +1,140 @@
+body{
+	max-width: 1200px;
+	margin: 0 auto 0 auto;
+}
+
+.links nav{
+	display:flex;
+	justify-content:space-around;
+	align-items:center;
+}
+.links a{
+	font-family:"Candal";
+	color:#022936;
+	
+}
+
+.divheader{
+	background-image:url("img/background.jpg");
+	background-position:center;
+	background-size:cover;
+	padding-top:11em;
+	padding-bottom:11em; 
+	font-family:"Candal";
+}
+.divheader{
+	text-align: center;
+	color:white;
+}
+	
+.container{
+	padding-bottom:5em;
+}
+.container h1{
+	text-align:center;
+	border:1px;
+	border-bottom: none;
+}
+.fstsect{
+	color:black;
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+
+}
+.scndsect{
+	color:black;
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	
+}
+.footnav nav{
+	display:flex;
+	justify-content:space-around;
+	text-align:center;
+	padding-top:3em;
+	padding-bottom:8em; 
+	color:white;
+}
+.footnav{
+	background-color:#022936;
+	font-family:"Candal";
+}
+.footnav a{
+	color:white;
+}
+
+article{
+	width:30%;
+	text-align:center;
+	font-family:"Open Sans";
+}
+
+article h3{
+	font-family:"Candal";
+	text-decoration:none;
+	color:#f47a8a;
+}
+input {
+	background-color:#f47a8a;
+	width:100%;
+	padding-top:1em;
+	padding-bottom:1em;
+}
+
+input:hover{
+	border:none;
+}
+h2{
+	text-align:center;
+	border-width:1px 1px 0px 1px;
+	border-style:dashed;
+	border-color:#022936;
+	padding-top:0.5em;
+	padding-bottom:0.5em;
+	font-family:"Candal";
+	color:#022936;
+	width:100%;
+}
+
+a{
+ text-decoration:none;
+}
+/********************
+******Tablette******
+********************/
+@media screen and (min-width:480px) and (max-width:780px) {
+	.divheader{
+		padding-top:9em;
+	    padding-bottom:9em; 
+	 }
+	 .container{
+	 	padding-top:2em;
+	 }
+	h2{
+		padding-top:1em;
+	}
+	.fstsect{
+		padding-left:0.5em;
+		padding-right:0.5em;
+
+	}
+	.scndsect{
+		padding-left:0.5em;
+		padding-right:0.5em;
+
+	}
+
+
+}
+/********************
+******Smartphone******
+********************/
+@media screen and (max-width:480px) {
+	.links nav{
+		width:100%
+	}
+
+
+

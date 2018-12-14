@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--
+//
+// This file is part of ColorZilla
+//
+// Written by Alex Sirota (alex @ iosart.com)
+//
+// Copyright (c) iosart labs llc 2011, All Rights Reserved
+//
+-->
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+
+<title>ColorZilla</title>
+<style type="text/css">
+
+
+</style>
+<script type="text/javascript" src="applegreen_fichiers/jquery.js"></script>
+<script type="text/javascript" src="applegreen_fichiers/jpicker-1.js"></script>
+<script type="text/javascript" src="applegreen_fichiers/utils.js"></script>
+<script type="text/javascript" src="applegreen_fichiers/browser-utils.js"></script>
+
+<script type="text/javascript" src="applegreen_fichiers/popup.js"></script>
+
+<link rel="stylesheet" type="text/css" href="applegreen_fichiers/jPicker-1.css">
+<link rel="stylesheet" type="text/css" href="applegreen_fichiers/popup.css">
+
+</head>
+
+<body>
+    <div id="main-menu" style="display: none;">
+        <div class="menu-item" id="eyedropper-menuitem">
+            <span class="menu-item-text">Pick Color From Page</span>
+        </div>
+
+        <div class="menu-separator current-color-ops-separator" style=""></div>
+
+        <div class="menu-item" id="color-picker-menuitem">
+            <div class="current-color" style="background-color: rgb(184, 203, 33);" title="rgb(184, 203, 33)   |   #B8CB21   |   hsl(67, 72%, 46%)"></div>
+            <span class="menu-item-text">Color Picker</span>
+        </div>
+
+        <div class="menu-item copy-op-menuitem" id="show-copy-to-clipboard-menuitem" style="">
+            <span class="menu-item-text">Copy Special...</span>
+        </div>
+
+         <div class="menu-item" id="resample-last-location-menuitem" style="">
+            <span class="menu-item-text">Re-sample Last Location</span>
+        </div>
+
+         <div class="menu-separator current-color-ops-separator" style=""></div>
+
+        <div class="menu-item" id="show-history-menuitem">
+            <span class="menu-item-text">Picked Color History</span>
+        </div>
+
+        <div class="menu-separator"></div>
+
+        <div class="menu-item" id="page-color-analyzer-menuitem">
+            <span class="menu-item-text">Webpage Color Analyzer</span>
+        </div>
+
+         <div class="menu-item" id="palette-browser-menuitem">
+            <span class="menu-item-text">Palette Browser</span>
+         </div>
+
+        <div class="menu-item" id="gradient-generator-menuitem">
+            <span class="menu-item-text">CSS Gradient Generator</span>
+        </div>
+
+        <div class="menu-separator"></div>
+
+         <div class="menu-item" id="help-menuitem">
+            <span class="menu-item-text">Help</span>
+        </div>
+
+        <div class="menu-separator"></div>
+
+        <div class="menu-item" id="options-menuitem">
+            <span class="menu-item-text">Options</span>
+        </div>
+    </div> <!-- main-menu -->
+
+    <div id="copy-to-clipboard-menu" style="display:none">
+        <div class="menu-item copy-op-menuitem" id="copy-rgb-menuitem" style="">
+            <span class="menu-item-text">Copy rgb(184, 203, 33)</span>
+        </div>
+
+        <div class="menu-item copy-op-menuitem" id="copy-rgba-menuitem" style="">
+            <span class="menu-item-text">Copy rgba(184, 203, 33, 1)</span>
+        </div>
+
+        <div class="menu-item copy-op-menuitem" id="copy-rgb-perc-menuitem" style="">
+            <span class="menu-item-text">Copy rgb(72%, 80%, 13%)</span>
+        </div>
+
+        <div class="menu-item copy-op-menuitem" id="copy-hsl-menuitem" style="">
+            <span class="menu-item-text">Copy hsl(67, 72%, 46%)</span>
+        </div>
+
+          <div class="menu-item copy-op-menuitem" id="copy-hex-menuitem" style="">
+            <span class="menu-item-text">Copy #B8CB21</span>
+        </div>
+
+        <div class="menu-item copy-op-menuitem" id="copy-hex-no-hash-menuitem" style="">
+            <span class="menu-item-text">Copy B8CB21</span>
+        </div>
+    </div>
+
+    <div id="help-menu" style="display:none">
+         <div class="menu-item noicon" id="online-help-menuitem">
+            <span class="menu-item-text">Online Help</span>
+        </div>
+
+         <div class="menu-item noicon" id="whats-new-menuitem">
+            <span class="menu-item-text">What's New</span>
+        </div>
+
+         <div class="menu-item noicon" id="colorzilla-homepage-menuitem">
+            <span class="menu-item-text">ColorZilla Homepage</span>
+        </div>
+
+         <div class="menu-item noicon" id="about-colorzilla-menuitem">
+            <span class="menu-item-text">About ColorZilla</span>
+        </div>
+    </div>
+
+<div id="colorpicker" style="" class="main-panel">
+    <div class="colorpicker-widget jPicker Container"><table class="jPicker" cellspacing="0" cellpadding="0"><tbody><tr><td rowspan="9"><h2 class="Title">&nbsp;</h2><div class="Map" style="background-color: rgb(229, 255, 0);"><span class="Map1" style="background-image: url(&quot;/lib/jPicker/images/Maps.png&quot;); top: 0px; visibility: visible;">&nbsp;</span><span class="Map2" style="background-image: url(&quot;/lib/jPicker/images/Maps.png&quot;); top: 260px; visibility: visible;">&nbsp;</span><span class="Map3" style="background-image: url(&quot;/lib/jPicker/images/map-opacity.png&quot;); visibility: hidden;">&nbsp;</span><img src="applegreen_fichiers/mappoint.gif" class="Arrow" style="left: 205px; top: 46px;"></div></td><td rowspan="9"><div class="Bar" style="background-color: transparent;"><span class="Map1" style="background-image: url(&quot;/lib/jPicker/images/Bars.png&quot;); top: 0px; visibility: visible;">&nbsp;</span><span class="Map2" style="background-image: url(&quot;/lib/jPicker/images/Bars.png&quot;); top: 260px; visibility: visible;">&nbsp;</span><span class="Map3" style="background-image: url(&quot;/lib/jPicker/images/Bars.png&quot;); top: 260px; visibility: visible;">&nbsp;</span><span class="Map4" style="background-image: url(&quot;/lib/jPicker/images/Bars.png&quot;); top: 260px; visibility: visible;">&nbsp;</span><span class="Map5" style="background-image: url(&quot;/lib/jPicker/images/bar-opacity.png&quot;); visibility: hidden;">&nbsp;</span><span class="Map6" style="background-image: url(&quot;/lib/jPicker/images/AlphaBar.png&quot;); top: 260px; visibility: visible;">&nbsp;</span><img src="applegreen_fichiers/rangearrows.gif" class="Arrow" style="left: 0px; top: 206px;"></div></td><td colspan="2" class="Preview">new<div style="background-image: url(&quot;/lib/jPicker/images/preview-opacity.png&quot;);"><span class="Active" title="New Color - Press “OK” To Commit" style="background-color: rgb(184, 203, 33); visibility: visible;">&nbsp;</span><span class="Current" title="Click To Revert To Original Color" style="background-color: rgb(184, 203, 33); visibility: visible;">&nbsp;</span></div>current</td><td rowspan="9" class="Button"><input type="button" class="Ok" value="Ok" title="Commit To This Color Selection"><input type="button" class="Cancel" value="Cancel" title="Cancel And Revert To Original Color"><hr><div class="history-header">Color history:</div><div class="Grid" style="background-image: url(&quot;/lib/jPicker/images/bar-opacity.png&quot;);"><span class="QuickColor" title="#b8cb21ff" style="background-color:#b8cb21;">&nbsp;</span><span class="QuickColor" title="#ffffffff" style="background-color:#ffffff;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" title="#efefefff" style="background-color:#efefef;">&nbsp;</span><span class="QuickColor" style="background-color:#efefef;background-image: url(/lib/jPicker/images/NoColor.png)" title="Clear history">&nbsp;</span></div></td></tr><tr class="Hue"><td class="Radio"><label title="Set To “Hue” Color Mode"><input type="radio" value="h" checked="checked">H:</label></td><td class="Text"><input type="text" maxlength="3" value="66" title="Enter A “Hue” Value (0-360°)">&nbsp;°</td></tr><tr class="Saturation"><td class="Radio"><label title="Set To “Saturation” Color Mode"><input type="radio" value="s">S:</label></td><td class="Text"><input type="text" maxlength="3" value="83" title="Enter A “Saturation” Value (0-100%)">&nbsp;%</td></tr><tr class="Value"><td class="Radio"><label title="Set To “Value” Color Mode"><input type="radio" value="v">V:</label><br><br></td><td class="Text"><input type="text" maxlength="3" value="79" title="Enter A “Value” Value (0-100%)">&nbsp;%<br><br></td></tr><tr class="Red"><td class="Radio"><label title="Set To “Red” Color Mode"><input type="radio" value="r">R:</label></td><td class="Text"><input type="text" maxlength="3" value="184" title="Enter A “Red” Value (0-255)"></td></tr><tr class="Green"><td class="Radio"><label title="Set To “Green” Color Mode"><input type="radio" value="g">G:</label></td><td class="Text"><input type="text" maxlength="3" value="203" title="Enter A “Green” Value (0-255)"></td></tr><tr class="Blue"><td class="Radio"><label title="Set To “Blue” Color Mode"><input type="radio" value="b">B:</label></td><td class="Text"><input type="text" maxlength="3" value="33" title="Enter A “Blue” Value (0-255)"></td></tr><tr class="Alpha"><td class="Radio">&nbsp;</td><td class="Text">&nbsp;</td></tr><tr class="Hex"><td colspan="2" class="Text"><label title="Enter A “Hex” Color Value (#000000-#ffffff)">#:<input type="text" maxlength="7" class="Hex" value="b8cb21"></label>&nbsp;</td></tr></tbody></table></div>
+    <div class="colorpicker-css-output">
+        <input class="rgb-color" type="text" readonly="readonly" value="rgb(184, 203, 33)">
+        <input class="hsl-color" type="text" readonly="readonly" value="hsl(67, 72%, 46%)">
+    </div>
+</div>
+
+<div id="webpage-color-analyzer-panel" style="display:none" class="main-panel">
+   <h1>CSS Colors on This Page</h1>
+   <div class="colors-container"></div>
+   <div class="selected-color-info">
+        <input class="rgb-color" type="text" readonly="readonly">
+        <input class="hex-color" type="text" readonly="readonly">
+        <span class="elem-info">&nbsp;</span>
+   </div>
+   <div class="button-container">
+        <button class="dialog-button ok-button">Ok</button>
+        <button class="dialog-button cancel-button">Cancel</button>
+    </div>
+</div>
+
+<div id="palette-browser-panel" style="display:none;" class="main-panel">
+    <div class="column column-1">
+        <div class="palette-chooser-container">
+            <select class="palette-chooser"></select>
+        </div>
+        <div class="palette-colors"></div>
+    </div>
+    <div class="column column-2">
+        <div class="current-color"></div>
+        <span class="color-rgb-label">R: </span><input type="text" class="color-rgb color-r" readonly="readonly"><br>
+        <span class="color-rgb-label">G: </span><input type="text" class="color-rgb color-g" readonly="readonly"><br>
+        <span class="color-rgb-label">B: </span><input type="text" class="color-rgb color-b" readonly="readonly"><br>
+        <input type="text" class="color-hex" readonly="readonly"><br>
+        <input type="text" class="color-name" readonly="readonly"><br>
+        <div class="button-container">
+            <button class="dialog-button ok-button">Ok</button>
+            <button class="dialog-button cancel-button">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
+
+</body></html>

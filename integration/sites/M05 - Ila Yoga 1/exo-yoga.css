@@ -1,0 +1,101 @@
+.header { 
+	text-align:center;
+	background-image: url("fond.jpg");
+	background-size:cover;
+	background-position: center center;
+	color:white;
+	margin: 0 auto 0 auto;
+	padding-top:2em;
+	padding-bottom:15em;
+
+}
+
+.header a{
+   color:white;
+   text-align:center;
+}
+
+.header h1{
+   color:white;
+   text-align:center;
+    padding-top:2em;
+}
+
+.header p{
+   color:white;
+   text-align:center;
+   padding-top:25px;
+}
+
+.container{
+	display:inline-block;
+	padding-top:5em;
+	padding-bottom:8em;
+}
+
+.section1 img{
+		float:left;
+}
+.bordure {
+		border-bottom:1px 
+		solid black;
+		padding-top:5em;
+		margin:3%;
+}
+section {
+    background-image: url("background_section.jpg");
+	background-size:cover;
+}
+.container2 article{
+	display:inline-block;
+	width: 30%;
+	max-width:800px;
+}
+
+.container2 img{
+	width: 33%;
+
+}
+.container2 p{ 
+    text-align:center; 
+
+}
+.container2 a{ 
+    text-align:center; 
+}
+.lien1, 
+.lien2,
+.lien3 {
+	text-align:center; 
+}
+
+img.img1{
+	display:block;
+	margin-left: auto;
+	margin-right:auto;
+	padding:1em 1em 1em 1em;
+}
+img.img2{
+	display:block;
+	margin-left: auto;
+	margin-right:auto;
+	padding:1em 1em 1em 1em;
+}
+img.img3{
+	display:block;
+	margin-left: auto;
+	margin-right:auto;
+	padding:1em 1em 1em 1em;
+}
+.containersec1 {
+	width: 100%;
+	padding:1em
+}
+.containersec2 {
+	width: 100%;
+	padding:1em;
+}
+.cartedeparis {
+	
+}
+

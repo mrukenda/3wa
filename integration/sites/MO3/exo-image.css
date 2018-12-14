@@ -1,0 +1,42 @@
+ @font-face { 
+	font-family: "Oswald";
+	src:url("fonts/Oswald-Regular.ttf");
+}
+body{
+	background-image:url(img/fond.png);
+	max-width:800px;
+	margin: 0 auto 0 auto;
+}
+
+div {
+	width:100%;
+	max-width:800px;
+	margin: 0 auto 0 auto;
+	padding: 2em 1em 1em 1em; 
+}
+
+#body {
+	background-color:white;
+}
+#header {
+	background-color:#BCD228;
+	
+}
+h1 {
+	font-family:"Oswald";
+	color:yellowgreen;
+}
+a {
+	font-family: "Oswald";
+	text-align:right;
+}
+
+p { 
+	color:black;
+ 	text-align: left;
+ }
+
+ul { 
+ 	color:black;
+ }
+

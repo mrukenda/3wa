@@ -1,0 +1,125 @@
+@font-face { 
+	font-family: "KaushanScript-Regular";
+	src:url("fonts/KaushanScript-Regular.otf");
+}
+/* header */
+
+.header { 
+	text-align:center;
+	background-image: url("fond.jpg");
+	background-size:cover;
+	background-position: center center;
+	color:white;
+	margin: 0 auto 0 auto;
+	padding-top:2em;
+	padding-bottom:15em;
+}
+.header a{
+   color:white;
+   text-align:center;
+}
+
+.header h1{
+   color:white;
+   text-align:center;
+    padding-top:2em;
+}
+
+.header p{
+   color:white;
+   text-align:center;
+   padding-top:25px;
+}
+/* header */
+
+/********************************************/
+
+/* container */
+
+.container{
+	text-align:center;
+}
+.tcontainer thead{
+	background-color:plum;
+	
+}
+.tcontainer{
+	text-align:center;
+
+}
+/* container */
+
+/*********************************************/
+
+/* details */ 
+
+body{
+	margin: 0 auto 0 auto;
+}
+th{
+	width:90%;
+	padding: 15px;
+	font-family:"KaushanScript-Regular";
+	font-size:2em;
+	color:white;
+	text-align: left;
+}
+table {
+	border:solid;
+	border-width:1px;
+	margin:0 auto 0 auto;
+	border-collapse:collapse;
+	width: 90%;
+}
+
+td {
+	padding:15px;
+	border:thin solid black;
+}
+h1{
+	text-align:center;
+    font-family: 'Playfair Display', serif;
+}
+
+legend {
+	padding:30px;
+}
+input{
+	display: inline;
+	position:relative;
+	margin:0 auto 0 auto;
+}
+
+body{
+    font-family: 'Playfair Display', serif;
+}
+
+tr:nth-of-type(even){
+	background-color: whitesmoke;
+}
+/* details */
+
+/****************************************/
+
+/* footer */
+.footer {
+	padding-left:90px;
+
+}
+.footer h2{
+	padding:30px;
+	text-align:center;
+}
+
+.footer fieldset{
+	text-align: center
+}
+.button {
+	text-align: center;
+	padding:30px;
+}
+/* footer */
+
+
+
+
